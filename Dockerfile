@@ -1,11 +1,11 @@
-FROM node:18
+FROM python:3.11-slim
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 COPY . .
 
-EXPOSE 3000
-CMD ["node", "app.js"]
+EXPOSE 5000
+CMD ["python", "app.py"]
