@@ -11,7 +11,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build("my-node-app")
+                   dockerImage = docker.build("my-python-app")
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline {
         stage('Run Container') {
             steps {
                 script {
-                    dockerImage.run("-p 3000:3000")
+                   dockerImage.run("-p 5000:5000")
                 }
             }
         }
